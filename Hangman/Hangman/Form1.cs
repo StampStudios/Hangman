@@ -36,6 +36,7 @@ namespace Hangman
                 if (isDigitTextBox)
                 {
                     MessageBox.Show("Please enter a word, " + uselessint.ToString() + " is not a word.");
+                    button1.PerformClick();
                 }
                 else
                 {
