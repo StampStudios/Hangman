@@ -11,7 +11,6 @@ namespace Hangman
         string word = null;
         int wordLength;
         string letter;
-        int letterLength;
 
         public Form1()
         {
@@ -29,7 +28,7 @@ namespace Hangman
 
             if (textBox.Any(char.IsDigit))
             {
-                MessageBox.Show("Please don't enter any numbers.");
+                MessageBox.Show("Please don't submit any numbers.");
             }
 
             else
@@ -43,11 +42,17 @@ namespace Hangman
 
                 else
                 {
-                    letter = textBox;
-                    letterLength = letter.Length;
+                    if (textBox.Length == 1)
+                    {
+                        letter = textBox;
+                    }
+
+                    else
+                    {
+                        MessageBox.Show("Please submit a letter.");
+                    }
                 }
             }
-
         }
     }
 }
