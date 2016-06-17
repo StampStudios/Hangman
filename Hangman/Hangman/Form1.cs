@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace Hangman
@@ -6,8 +7,11 @@ namespace Hangman
     public partial class Form1 : Form
     {
 
+        string textBox;
         string word = null;
         int wordLength;
+        string letter;
+        int letterLength;
 
         public Form1()
         {
@@ -21,27 +25,29 @@ namespace Hangman
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (word == null)
+            textBox = textBox1.Text;
+
+            if (textBox.Any(char.IsDigit))
             {
-                word = textBox1.Text;
-                int uselessint;
-                bool isDigitTextBox = int.TryParse(word, out uselessint);
-                if (isDigitTextBox)
-                {
-                    MessageBox.Show("Please enter a word, " + uselessint.ToString() + " is not a word.");
-                    button1.PerformClick();
-                }
-                else
-                {
-                    wordLength = word.Length;
-                    button1.Text = "Submit Letter";
-                }
+                MessageBox.Show("Please don't enter any numbers.");
             }
 
             else
             {
+                if (word == null)
+                {
+                    word = textBox;
+                    wordLength = word.Length;
+                    button1.Text = "Submit Letter";
+                }
 
+                else
+                {
+                    letter = textBox;
+                    letterLength = letter.Length;
+                }
             }
+
         }
     }
 }
