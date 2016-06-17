@@ -16,5 +16,10 @@ namespace Hangman
         {
             InitializeComponent();
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            MessageBox.Show("Developed by ItsTenchy and Tinsley_ for release on GitHub.");
+        }
     }
 }
