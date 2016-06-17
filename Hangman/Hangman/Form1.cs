@@ -7,7 +7,7 @@ namespace Hangman
     {
 
         string word = null;
-        bool guessingWord = false;
+        int wordLength;
 
         public Form1()
         {
@@ -33,10 +33,8 @@ namespace Hangman
                 }
                 else
                 {
-                    // Here for debug.
-                    Console.WriteLine(word);
+                    wordLength = word.Length;
                     button1.Text = "Submit Letter";
-                    guessingWord = true;
                 }
             }
 
