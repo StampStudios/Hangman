@@ -35,7 +35,7 @@ namespace Hangman
                 bool isDigitTextBox = int.TryParse(word, out uselessint);
                 if (isDigitTextBox)
                 {
-                    MessageBox.Show("Please enter a word, not a number.");
+                    MessageBox.Show("Please enter a word, " + uselessint.ToString() + " is not a word.");
                 }
                 else
                 {
