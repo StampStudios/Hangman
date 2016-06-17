@@ -14,6 +14,7 @@ namespace Hangman
     {
 
         string word = null;
+        bool guessingWord = false;
 
         public Form1()
         {
@@ -27,11 +28,22 @@ namespace Hangman
 
         private void button1_Click(object sender, EventArgs e)
         {
-            button1.Text = "Submit Letter";
-
             if (word == null)
             {
                 word = textBox1.Text;
+                int uselessint;
+                bool isDigitTextBox = int.TryParse(word, out uselessint);
+                if (isDigitTextBox)
+                {
+                    MessageBox.Show("Please enter a word, not a number.");
+                }
+                else
+                {
+                    // Here for debug.
+                    Console.WriteLine(word);
+                    button1.Text = "Submit Letter";
+                    guessingWord = true;
+                }
             }
 
             else
