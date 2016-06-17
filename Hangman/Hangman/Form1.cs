@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -20,6 +21,7 @@ namespace Hangman
         private void Form1_Load(object sender, EventArgs e)
         {
             MessageBox.Show("Developed by ItsTenchy and Tinsley_ for release on GitHub.");
+            label1.Text = "";
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -38,6 +40,7 @@ namespace Hangman
                     word = textBox;
                     wordLength = word.Length;
                     button1.Text = "Submit Letter";
+                    label1.Text = string.Concat(Enumerable.Repeat("_ ", wordLength));
                 }
 
                 else
