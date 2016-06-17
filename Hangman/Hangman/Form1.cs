@@ -16,6 +16,7 @@ namespace Hangman
         public Form1()
         {
             InitializeComponent();
+            Debug.WriteLine("Working");
         }
 
         private void Form1_Load(object sender, EventArgs e)
